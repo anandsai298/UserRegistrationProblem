@@ -27,10 +27,14 @@ namespace UserRegistrationProblem
                 return "VALID";
             return "INVALID";
         }
-        public string Validate_EmailId(string email)
+        public string Validate_EmailId(string[] arr)
         {
-            if (Regex.IsMatch(email, EMAIL_ID))
-                return "VALID";
+            for(int i=0;i<arr.Length;i++)
+            {
+                string email = arr[i];
+                if (Regex.IsMatch(email, EMAIL_ID))
+                    return "VALID";
+            }
             return "INVALID";
         }
         public string Validate_Password(string password)

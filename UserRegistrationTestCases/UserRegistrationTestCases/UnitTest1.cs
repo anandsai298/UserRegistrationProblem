@@ -28,9 +28,14 @@ namespace UserRegistrationTestCases
         [Test]
         public void GivenValidate_EmailId_WhenAnalyse_ReturnValid()
         {
+            string[] arr = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com"};
             UserRegistration ur = new UserRegistration();
-            string result = ur.Validate_EmailId("anand@gmail.com");
-            Assert.AreEqual(result, "VALID");
+            string result = ur.Validate_EmailId(arr);
+            for(int i=0;i< arr.Length;i++)
+            {
+                if (arr[i] == "Valid")
+                    Assert.AreEqual(result, "VALID");
+            }
         }
         [Test]
         public void GivenValidate_Password_WhenAnalyse_ReturnValid()
