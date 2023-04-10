@@ -52,6 +52,11 @@ namespace UserRegistrationTestCases
             Assert.IsTrue(res, "VALID");
         }
         [Test]
- 
+        public void GivenValidateLNLambda_WhenAnalyse_ReturnValid()
+        {
+            ValidationLambda L = new ValidationLambda();
+            bool res = L.Validate_LN_Lambda("Anand");
+            Assert.IsTrue(res, "VALID");
+        }
     }
 }
