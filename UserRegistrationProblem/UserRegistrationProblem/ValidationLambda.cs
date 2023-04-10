@@ -11,6 +11,7 @@ namespace UserRegistrationProblem
     {
         public bool Validate_FN_Lambda(string fn) => Regex.IsMatch(fn, "^[A-Z]{1}[a-z]{2,}$") ? true : false;
         public bool Validate_LN_Lambda(string ln) => Regex.IsMatch(ln, "^[A-Z]{1}[a-z]{2,}$") ? true : false;
+        public bool Validate_PhNo_Lambda(string phno) => Regex.IsMatch(phno, "^[6-9]{1}[0-9]{9}$") ? true : false;
 
     }
 }
