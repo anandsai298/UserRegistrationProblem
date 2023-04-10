@@ -72,5 +72,17 @@ namespace UserRegistrationTestCases
             bool res = L.Validate_Password_Lambda("Here&123");
             Assert.IsTrue(res, "VALID");
         }
+        [Test]
+        public void GivenValidate_EmailID_WhenAnalyse_ReturnValid()
+        {
+            string[] arr = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" };
+            ValidationLambda L = new ValidationLambda();
+            var result = arr.Where(L.Validate_EmailID_Lambda);
+            foreach(var item in arr)
+            {
+                if (item == "Valid")
+                    Assert.IsTrue(L.Validate_EmailID_Lambda(item), "VALID");
+            }
+        }
     }
 }
