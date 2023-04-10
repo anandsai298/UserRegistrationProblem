@@ -65,5 +65,12 @@ namespace UserRegistrationTestCases
             bool res = L.Validate_PhNo_Lambda("9550631687");
             Assert.IsTrue(res, "VALID");
         }
+        [Test]
+        public void GivenValidatePasswordLambda_WhenAnalyse_ReturnValid()
+        {
+            ValidationLambda L = new ValidationLambda();
+            bool res = L.Validate_Password_Lambda("Here&123");
+            Assert.IsTrue(res, "VALID");
+        }
     }
 }
