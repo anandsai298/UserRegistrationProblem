@@ -44,5 +44,14 @@ namespace UserRegistrationTestCases
             string result = ur.Validate_Password("Here%123");
             Assert.AreEqual(result, "VALID");
         }
+        [Test]
+        public void GivenValidateFNLambda_WhenAnalyse_ReturnValid()
+        {
+            ValidationLambda L = new ValidationLambda();
+            bool res = L.Validate_FN_Lambda("Ask");
+            Assert.IsTrue(res, "VALID");
+        }
+        [Test]
+ 
     }
 }
